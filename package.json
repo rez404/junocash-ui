@@ -8,7 +8,7 @@
     "dev": "vite",
     "build": "tsc -p tsconfig.electron.json && vite build",
     "preview": "vite preview",
-    "electron:dev": "concurrently \"vite\" \"npm run electron:start\"",
+    "electron:dev": "tsc -p tsconfig.electron.json && concurrently \"vite\" \"npm run electron:start\"",
     "electron:start": "wait-on http://localhost:5173 && electron .",
     "electron:build": "npm run build && electron-builder",
     "build:mac": "npm run build && electron-builder --mac && bash scripts/fix-mac-quarantine.sh",
